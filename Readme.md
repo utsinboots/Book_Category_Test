@@ -11,7 +11,7 @@ Basically, I'm trying the specific user (after matching condition) after login b
 After successful login, redirect to:
 127.0.0.1:3000/home 
  - Home page contains both books and category list
- - Wrong credentials, redirect to '/'
+ - If login wrong credentials, redirect to '/'
  - After login should be able to access all tabs
 
  127.0.0.1:3000/book
