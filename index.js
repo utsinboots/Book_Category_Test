@@ -9,17 +9,17 @@ require('./app/config/config.db');
 app.set('view engine', 'ejs');
 app.set('views', './app/views');
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public')); //to make pictures in public folder dir static
 
 
-//Middleware session
-const isLoggedIn = require('./app/middleware/middleware.isLoggedIn');
 
-app.use(require('./app/routes/route.client'));
+const isLoggedIn = require('./app/middleware/middleware.isLoggedIn'); //For Middleware session
 
-app.use(isLoggedIn);
+app.use(require('./app/routes/route.client')); 
 
-//app.use('/home', require('./app/routes/route.client'))
+app.use(isLoggedIn); //using middleware session here to check login condition before other pages can be visited
+
+//app.use('/home', require('./app/routes/route.client')) //not sure if this line is correct for /home page
 
 app.use('/book', require('./app/routes/route.book'));
 app.use('/category', require('./app/routes/route.category'));

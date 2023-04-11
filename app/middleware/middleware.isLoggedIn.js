@@ -5,7 +5,7 @@ const isLoggedIn = (req, res) => {
     console.log(`LOGIN DETAILS: Name: ${name}, Email: ${email}, PW: ${password}`)
 
     if(name == 'test' && email == 'test@test.com' && password == 'password') {       
-        console.log("SUCCESFUL LOGIN")
+        console.log("SUCCESSFUL LOGIN")
         //next();
         res.redirect('/home');
 
